@@ -1,0 +1,16 @@
+version: '3'
+services:
+  attendance:
+    image: crdschurch/crds-attendance:${DOCKER_TAG:-development}
+    build:
+      args:
+        - DEPLOYMENT_PATH
+      context: ../../
+      dockerfile: ./deployment/docker/prod.Dockerfile
+    container_name: crds-attendance
+    stdin_open: true
+    tty: true
+    env_file:
+      - .env
+    ports:
+      - 80:8000

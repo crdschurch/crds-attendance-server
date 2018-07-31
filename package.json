@@ -1,0 +1,36 @@
+{
+  "name": "crds-attendance-server",
+  "version": "1.0.0",
+  "description": "crds-attendance-server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crdschurch/crds-attendance-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crdschurch/crds-attendance-server/issues"
+  },
+  "homepage": "https://github.com/crdschurch/crds-attendance-server#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "chance": "^1.0.4",
+    "compression": "^1.6.2",
+    "connect-session-sequelize": "^3.1.0",
+    "cors": "^2.8.4",
+    "email-templates": "^2.4.1",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "jsonpack": "^1.1.5",
+    "nodemailer": "^2.6.0",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "request": "^2.74.0",
+    "sequelize": "^3.23.6",
+    "tedious": "^2.6.3"
+  }
+}

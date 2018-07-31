@@ -1,0 +1,46 @@
+h2 Crossroads Attendance: #{report.requestParameters.startDate} - #{report.requestParameters.endDate}
+
+a(href= shareURL) View Report
+br
+br
+
+
+.row
+    //-
+        .col-md-12.notes
+            img(src='https://s16.postimg.org/otw1wpl51/o_KRyt_ZG.png')
+            | &nbsp;Notes:
+            .note-listing
+                ul(style='margin-left: 0px!important;')
+                    each note in report.data.meta.notes
+                        li(style='margin-left:0px;margin-right:5px')
+                            span.badge-tt= note+', '
+
+    .col-sm-12
+        table.table
+            thead
+                tr
+                    th
+                    each entry_type in report.data.meta.entry_types
+                        th= entry_type
+                    each comparison in report.data.meta.comparisons
+                        th= comparison.replace(/<br>/g, ' ')
+
+            tbody
+                each site, key in report.data
+                    if key !== 'meta'
+                        tr.site
+                            td= key
+                            each entry_type in report.data.meta.entry_types
+                                td= site[entry_type] || '0'
+                            each comparison in report.data.meta.comparisons
+                                td= site.comparisons[comparison] || 'N/A'
+
+                        each ministry, name in site.ministries
+                            if name !== 'meta'
+                                tr.ministry
+                                    td= name
+                                    each entry_type in report.data.meta.entry_types
+                                        td= ministry[entry_type] || '0'
+                                    each comparison in report.data.meta.comparisons
+                                        td= ministry.comparisons[comparison] || 'N/A'
