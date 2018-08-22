@@ -83,7 +83,8 @@ module.exports = function() {
         },
         service_name: Sequelize.STRING,
         service_group: Sequelize.STRING,
-        display_order: Sequelize.INTEGER
+        display_order: Sequelize.INTEGER,
+        is_active: Sequelize.BOOLEAN
     }, {
         timestamps: false,
         freezeTableName: true
